@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="default" extends="struts-default">
+	 
+		<action name="register" >
+			<result >/register.jsp</result>
+		</action>
+		
+		<action name="registerUser" class="action.RegisterAction">
+		<result name="SUCCESS">/registrationConfirmation.jsp</result>
+		</action>
+		
+		<action name="login">
+		<result>/index.jsp</result>
+		</action>
+		
+		<action name="loginUser" class="action.LoginAction" method="execute">
+		<result name="superUser">/homeSU.jsp</result>
+		<result name="administrator">/homeA.jsp</result>
+		<result name="softwareProgrammer">/homeU.jsp</result>
+		<result name="ERROR">/index.jsp</result>
+		</action>
+		
+		<action name="logout" class="action.LoginAction" method="logout">
+		<result name="LOGOUT">/index.jsp</result>
+		</action>
+		
+		<action name="dashboard" class="action.dashboardAction">
+		<result name="superUser">/homeSU.jsp</result>
+		<result name="administrator">/homeA.jsp</result>
+		<result name="softwareProgrammer">/homeU.jsp</result>
+		<result name="ERROR">/index.jsp</result>
+		</action>
+		
+		<action name="passwordReset">
+		<result>/passwordReset.jsp</result>
+		</action>
+		
+		<action name="resetPassword">
+		<result>/passwordReset.jsp</result>
+		</action>
+		
+		<action name="accountSetting">
+		<result>/accountSetting.jsp</result>
+		</action>
+		
+		<action name="editProfile" class="action.ViewAction">
+			<result name="SUCCESS">/editProfile.jsp</result>
+			<result name="ERROR">/editProfile.jsp</result>
+		</action>
+		
+		<action name="updateUser" class="action.UpdateAction">
+			<result name="SUCCESS">/accountSetting.jsp</result>
+			<result name="ERROR">/editProfile.jsp</result>
+		</action>
+		
+		<action name="postJob">
+		<result>/postJob.jsp</result>
+		</action>
+		
+		<action name="ThreadHome" class="action.ViewThreadsAction">
+		<result name="SUCCESS">/ThreadHome.jsp</result>
+		</action>
+		
+		<action name="postThread">
+		<result>/postThread.jsp</result>
+		 </action>
+		
+		<action name="publishThread" class="action.PostThreadAction">		
+		<result name="SUCCESS">/ThreadHome.jsp</result>
+		</action>
+		
+		<action name="viewAllThreads">
+		<result>/viewAllThreads.jsp</result>
+		</action>
+
+		<action name="sendBulkMail">
+		<result>/sendBulkMail.jsp</result>
+		</action>
+		
+		<action name="sendemail" class="action.BulkMailingAction">
+		<result name="SEND">/sendBulkMail.jsp</result>
+		</action>
+		
+		<action name="homeSU">
+		<result>/homeSU.jsp</result>
+		</action>
+		
+		<action name="homeU">
+		<result>/homeU.jsp</result>
+		</action>
+		<action name="homeA">
+		<result>/homeA.jsp</result>
+		</action>
+		
+		<action name="registerAdmin">
+		<result>/registerAdmin.jsp</result>
+		</action>
+		
+		<action name="registerAdminAcc" class="action.RegisterAdminAction">
+		<result name="SUCCESS">/homeSU.jsp</result>
+		</action>
+		
+			<action name="searchUser" class="action.ReportAllAction">
+		<result name="SUCCESS">/searchProfile.jsp</result>
+		</action>
+		
+		<action name="searchProfile2" class="action.ReportAction">
+		<result name="SUCCESS">/searchProfile2.jsp</result>
+		</action>
+		
+		<action name="searchProfile3" class="action.ReportAction">
+		<result name="SUCCESS">/searchProfile3.jsp</result>
+		</action>
+		
+		<action name="contactUs">
+		<result>/contactUs.jsp</result>
+		</action>
+		
+		<action name="aboutUs">
+		<result>/aboutUs.jsp</result>
+		</action>
+		
+		<action name="privatePolicy">
+		<result>/privatePolicy.jsp</result>
+		</action>
+		
+	</package>
+</struts>  
